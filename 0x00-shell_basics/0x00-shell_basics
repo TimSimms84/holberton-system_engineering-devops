@@ -1,0 +1,3 @@
+#!/bin/bash
+#script that prints absoloute path name
+pwd

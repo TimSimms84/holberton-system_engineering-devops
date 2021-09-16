@@ -1,2 +1,2 @@
-#!/bin/basgithub.com/TimSimms84/holberton-system_engineering-devops/blob/main/0x02-shell_redirections/22-users_and_homesh
+#!/bin/bash
 echo "Best School" > "\\\*\\\\\'\""Best School\""\'\\\*\$\\\?\\\*\\\*\\\*\\\*\\\*\:\)"

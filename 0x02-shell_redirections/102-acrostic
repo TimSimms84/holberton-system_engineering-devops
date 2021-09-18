@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c 1 | tr "\n" " " | tr -d "[:blank:]"
+cut -c 1 | tr "\n" " " | tr -d "[:blank:]" | xargs echo

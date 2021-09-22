@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Prints Holberton School 10 times, except line 4 says bad luck and line 5 says good.
+
+i=1
+while [ $i -lt 11 ];do 
+	if (( i == 4));then
+	echo bad luck
+        elif (( i == 8 ));then
+	echo good luck; else
+	echo Holberton School
+	fi
+	(( i++ ))
+done

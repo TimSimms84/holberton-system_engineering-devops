@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Script prints Holberton School 10 times
 for (( c=1; c<=10; c++ ))
 do  
    echo "Holberton School"

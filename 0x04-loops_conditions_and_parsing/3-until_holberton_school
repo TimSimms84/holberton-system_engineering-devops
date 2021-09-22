@@ -1,0 +1,9 @@
+#!/bin/bash
+
+c=0
+
+until [ $c -gt 11 ]
+do
+  echo Holberton School
+  ((c++))
+done

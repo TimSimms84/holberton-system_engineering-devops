@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Prints 1 - 20, but says where bad luck numbers are from certain countries 
+i=1
+while (( i <=20));do
+    echo $i
+    case "$i" in
+    4) echo Bad Luck From China;;
+    9) echo Bad Luck From Japan;;
+    17) echo bad Luck from Italy;;
+    esac
+    (( i++ ))
+done

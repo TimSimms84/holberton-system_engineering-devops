@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Display directory in list format and remove the first - in filename.
+
+l="$(ls)"
+for f in $l;do
+echo $f | cut -d "-" -f2
+done

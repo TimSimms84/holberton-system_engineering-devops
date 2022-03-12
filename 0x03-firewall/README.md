@@ -1,0 +1,10 @@
+0x03. Firewall
+#!/usr/bin/env bash
+# setup ufw to allow ports
+# 22 for ssh
+# 443 for HTTPS SSL
+# 80 for HTTP
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable

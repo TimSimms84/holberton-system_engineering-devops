@@ -30,7 +30,7 @@ def to_csv():
                         format(id)).json()
 
     with open("{}.csv".format(id), "w", newline="") as csvFile:
-        writer = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(csvFile)
         for task in toDo:
             writer.writerow([int(id), user.get("username"),
                           task.get("completed"), task.get("title")])

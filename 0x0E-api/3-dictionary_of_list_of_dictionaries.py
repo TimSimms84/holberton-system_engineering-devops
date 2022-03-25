@@ -77,18 +77,12 @@ def save_all():
         uid = user.get("id")
         diction[uid] = []
         usernames[uid] = user.get("username")
-        print(diction)
-    i = 0
     for task in toDo:
         taskd = {}
         uid = task.get("userId")
         taskd["username"] = usernames.get(uid)
         taskd["task"] = task.get("title")
         taskd["completed"] = task.get("completed")
-        # x = diction.get(uid)
-        # if i < 10:
-        #     print("x is {}".format(x))
-        #     i += 1
         diction.get(uid).append(taskd)
 
     with open("todo_all_employees.json", "w") as file:

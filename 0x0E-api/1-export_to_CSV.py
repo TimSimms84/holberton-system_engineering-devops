@@ -17,7 +17,7 @@ tasks: TASK_TITLE (with 1 tabulation and 1 space before the TASK_TITLE)
 """
 
 
-def get_todo():
+def get_csv():
     import csv
     import requests
     from sys import argv
@@ -28,15 +28,15 @@ def get_todo():
     toDo = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
                         format(id)).json()
 
-    # completedTask = []
+    completedTask = []
 
-    # for task in toDo:
-    #     if task.get("completed") is True:
-    #         completedTask.append(task.get("title"))
-    # print("Employee {} is done with tasks({}/{}):"
-    #       .format(user.get('name'), len(completedTask), len(toDo)))
-    # for task in completedTask:
-    #     print("\t {}".format(task))
+    for task in toDo:
+        if task.get("completed") is True:
+            completedTask.append(task.get("title"))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(user.get('name'), len(completedTask), len(toDo)))
+    for task in completedTask:
+        print("\t {}".format(task))
 
     with open("{}.csv".format(id), "w", newline="") as csvFile:
         writer = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
@@ -46,4 +46,4 @@ def get_todo():
 
 
 if __name__ == '__main__':
-    get_todo()
+    get_csv()

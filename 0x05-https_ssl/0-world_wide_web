@@ -8,7 +8,7 @@ func () {
 	elif [ $# -eq 1 ]; then
 		for sub in 'www' 'lb-01' 'web-01' 'web-02'; do
 			var=$sub.$1
-	    	dig "$var" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", $2, $4, $5}'
+	    	dig "$var" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var=$sub
 		done
 	fi
 }

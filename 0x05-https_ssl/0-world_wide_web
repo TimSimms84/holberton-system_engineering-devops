@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#gets A records of domain and subdomains
+# shellcheck disable=SC2086
+
+func () {
+	if [ $# -eq "2" ]; then	
+		dig "$2.$1"  | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", $2, $4, $5}'
+	elif [ $# -eq 1 ]; then
+		for sub in 'www' 'lb-01' 'web-01' 'web-02'; do
+			var=$sub.$1
+	    	dig "$var" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", $2, $4, $5}'
+		done
+	fi
+}
+
+func "$@"

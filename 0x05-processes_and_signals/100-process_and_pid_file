@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #comment
 
-echo "$$" > /var/run/holbertonscript.pid
+echo "$$" > /var/run/myscript.pid
 trap "echo Y U no love me?!" SIGINT
 trap "echo I hate the kill command" SIGTERM
-trap "rm /var/run/holbertonscript.pid" SIGQUIT SIGTERMi
+trap "rm /var/run/myscript.pid" SIGQUIT SIGTERM
 
 for (( ; ; ));do
 echo "To infinity and beyond"
